@@ -7,25 +7,32 @@
     <title>Document</title>
 </head>
 <body>
-    <header>Weather Dashboard</header>
-    <nav>
-        Search for a City<br>
-        <input type="text">
-        <button>Search</button>
-        <button class="city">Seattle</button>
-        <button class="city">Dallas</button>
-        <button class="city">Charleston</button>
-    </nav>
-    <main></main>
-    <info>
-        5-Day Forecast
-        <div class="container">
-            <div class="weather-block">Day 1</div>
-            <div class="weather-block">Day 2</div>
-            <div class="weather-block">Day 3</div>
-            <div class="weather-block">Day 4</div>
-            <div class="weather-block">Day 5</div>
-        </div>
-    </info>
+    <div class="container">
+        <header>Weather Dashboard</header>
+        <nav>
+            Search for a City<br>
+            <input type="text">
+            <button>Search</button>
+            <button class="city">Seattle</button>
+            <button class="city">Dallas</button>
+            <button class="city">Charleston</button>
+        </nav>
+        <main>
+            <div class="info">
+                <h4>*Selected City* (Date)</h4>
+                Temp
+                Humidity
+                Wind Speed
+                UV Index
+            </div>
+            <div class="forecast">
+                <div class="weather-block">Day 1</div>
+                <div class="weather-block">Day 2</div>
+                <div class="weather-block">Day 3</div>
+                <div class="weather-block">Day 4</div>
+                <div class="weather-block">Day 5</div>
+            </div>
+        </main>
+    </div>
 </body>
 </html>

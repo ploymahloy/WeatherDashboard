@@ -11,14 +11,32 @@ header {
     color: white;
     font-size: xx-large;
     font-weight: bold;
-    padding: 20px;
+    padding: 10px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px 1fr 1fr;
 }
 
 nav {
     width: 25%;
+    height: 100%;
+    background: #EBEBEB;
+    padding: 10px;
+
+}
+
+input {
+    margin-bottom: 10px;
 }
 
 .city {
     display: block;
     width: 100%;
+    padding: 5px;
 }
