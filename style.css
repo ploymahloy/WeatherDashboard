@@ -6,6 +6,9 @@
 }
 
 header {
+    grid-column-start: 1;
+    grid-column-end: 7;
+
     text-align: center;
     background: #3E3E3E;
     color: white;
@@ -19,16 +22,16 @@ header {
     height: 100vh;
 
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 60px 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 60px repeat(5, 1fr);
 }
 
 nav {
-    width: 25%;
-    height: 100%;
+   grid-row-start: 2;
+   grid-row-end: 7;
+
     background: #EBEBEB;
     padding: 10px;
-
 }
 
 input {
@@ -39,4 +42,20 @@ input {
     display: block;
     width: 100%;
     padding: 5px;
+}
+
+.info {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background: violet;
+}
+
+.forecast {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: 7;
+    background: yellow
 }
