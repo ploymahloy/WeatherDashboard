@@ -8,11 +8,12 @@ var Charleston = 4574324;
 var city = $("#search").val();
 
 $(document).ready(function() {
-  $(".search").click(function(){
+  $(".search-btn").click(function(){
     var input = $("#search").val();
     console.log(input);
     searchCity(input);
-  });
+    $("button").append(`${input}`);
+});
   function searchCity(input) {
     $.ajax({
           url: "https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=0cab6337530678cba09e0300bc133675",
@@ -27,5 +28,7 @@ $(document).ready(function() {
   }
     const history = JSON.parse(window.localStorage.getItem("history")) || [];
 })
+
+
 
 // localstorage
