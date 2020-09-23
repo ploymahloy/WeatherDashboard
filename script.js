@@ -12,7 +12,7 @@ $(document).ready(function() {
     var input = $("#search").val();
     console.log(input);
     searchCity(input);
-    $("button").append(`${input}`);
+    $(`<button class="city">${input}</button>`).appendTo("nav");
 });
   function searchCity(input) {
     $.ajax({
