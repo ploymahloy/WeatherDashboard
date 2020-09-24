@@ -40,6 +40,13 @@ $(document).ready(function() {
                     $(".uv-index").css("background-color", "yellow");
                   }
           });
+          $.ajax({  
+                url: "http://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=0cab6337530678cba09e0300bc133675",
+                  method: "GET"
+                }).then(function(response) {
+                  console.log(response);
+                  
+          });
       });
     }
     const history = JSON.parse(window.localStorage.getItem("history")) || [];
