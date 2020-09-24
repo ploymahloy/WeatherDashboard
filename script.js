@@ -1,10 +1,4 @@
 var APIKey = "0cab6337530678cba09e0300bc133675";
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
-var Seattle = 5809844;
-var Dallas = 4684888;
-var Charleston = 4574324;
-
 var city = $("#search").val();
 
 $(document).ready(function() {
@@ -15,8 +9,7 @@ $(document).ready(function() {
     $(`<button class="city">${input}</button>`).appendTo("nav");
   });
   $(".search-btn").click(function(){
-    console.log("icon-test");
-    $("#icon").attr("src", "http://openweathermap.org/img/wn/10d@2x.png");
+    // console.log("icon-test");
   });
 
   function searchCity(input) {
@@ -29,9 +22,18 @@ $(document).ready(function() {
               history.push(input);
               window.localStorage.setItem("history", JSON.stringify(history));
             }
+          $("#city").html("<h3>" + response.name + " Weather Details</h3>");  
+          $("#icon").attr("src", `http://openweathermap.org/img/wn/` + response.weather[0].icon + `@2x.png`);
+          $(".temp").text("Temperature (F) " + (response.main.temp - 273.15) * 1.80 + 32);
+          $(".humidity").text("Humidity: " + response.main.humidity);
+          $(".wind-speed").text("Wind Speed: " + response.wind.speed);
+      });
+      $.ajax({
+              url: "http://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=0cab6337530678cba09e0300bc133675",
+              method: "GET"
+            }).then(function(response) {
+              console.log('test');
     });
   }
     const history = JSON.parse(window.localStorage.getItem("history")) || [];
 })
-
-// localstorage
