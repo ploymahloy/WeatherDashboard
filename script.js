@@ -14,7 +14,7 @@ $(document).ready(function() {
           url: "https://api.openweathermap.org/data/2.5/weather?q=" + input + "&appid=0cab6337530678cba09e0300bc133675",
           method: "GET"
         }).then(function(response) {
-            console.log(response)
+            console.log(response);
             if (history.indexOf(input) === -1) {
               history.push(input);
               window.localStorage.setItem("history", JSON.stringify(history));
@@ -45,7 +45,12 @@ $(document).ready(function() {
                   method: "GET"
                 }).then(function(response) {
                   console.log(response);
-                  
+                  $("#day-1").html(
+                    "Date:" + response.list[0].dt_txt + "<br>" +
+                    response.list[0].weather[0].icon + "<br>" +
+                    "Temp: " + (response.list[0].main.temp - 273.15) * 1.80 + 32 + "<br>" +
+                    "Humidity: " + response.list[0].main.humidity
+                    );
           });
       });
     }
