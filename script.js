@@ -30,7 +30,16 @@ $(document).ready(function() {
                 }).then(function(response) {
                   console.log(response);
                   $(".uv-index").text("UV Index: " + response.value);
-        });
+                  if (response.value < 5.01) {
+                    $(".uv-index").css("background-color", "#07F200");
+                  }
+                  else if (response.value > 8.99) {
+                    $(".uv-index").css("background-color", "red");
+                  }
+                  else {
+                    $(".uv-index").css("background-color", "yellow");
+                  }
+          });
       });
     }
     const history = JSON.parse(window.localStorage.getItem("history")) || [];
