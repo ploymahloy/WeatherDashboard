@@ -21,7 +21,7 @@ $(document).ready(function() {
             }
           $("#city").html("<h3>" + response.name + " Weather Details</h3>");  
           $("#icon").attr("src", `http://openweathermap.org/img/wn/` + response.weather[0].icon + `@2x.png`);
-          $(".temp").text("Temperature (F): " + (response.main.temp - 273.15) * 1.80 + 32);
+          $(".temp").text("Temperature (F): " + Math.round((response.main.temp - 273.15) * 1.80 + 32));
           $(".humidity").text("Humidity: " + response.main.humidity);
           $(".wind-speed").text("Wind Speed: " + response.wind.speed);
           $.ajax({
@@ -48,7 +48,31 @@ $(document).ready(function() {
                   $("#day-1").html(
                     "Date:" + response.list[0].dt_txt + "<br>" +
                     response.list[0].weather[0].icon + "<br>" +
-                    "Temp: " + (response.list[0].main.temp - 273.15) * 1.80 + 32 + "<br>" +
+                    "Temp: " + Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32) + "<br>" +
+                    "Humidity: " + response.list[0].main.humidity
+                    );
+                  $("#day-2").html(
+                    "Date:" + response.list[0].dt_txt + "<br>" +
+                    response.list[1].weather[0].icon + "<br>" +
+                    "Temp: " + Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32) + "<br>" +
+                    "Humidity: " + response.list[0].main.humidity
+                    );
+                  $("#day-3").html(
+                    "Date:" + response.list[0].dt_txt + "<br>" +
+                    response.list[2].weather[0].icon + "<br>" +
+                    "Temp: " + Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32) + "<br>" +
+                    "Humidity: " + response.list[0].main.humidity
+                    );
+                  $("#day-4").html(
+                    "Date:" + response.list[0].dt_txt + "<br>" +
+                    response.list[3].weather[0].icon + "<br>" +
+                    "Temp: " + Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32) + "<br>" +
+                    "Humidity: " + response.list[0].main.humidity
+                    );
+                  $("#day-5").html(
+                    "Date:" + response.list[0].dt_txt + "<br>" +
+                    response.list[4].weather[0].icon + "<br>" +
+                    "Temp: " + Math.round((response.list[0].main.temp - 273.15) * 1.80 + 32) + "<br>" +
                     "Humidity: " + response.list[0].main.humidity
                     );
           });
