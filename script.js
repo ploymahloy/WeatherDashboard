@@ -25,7 +25,7 @@ $(document).ready(function() {
           $(".humidity").text("Humidity: " + response.main.humidity);
           $(".wind-speed").text("Wind Speed: " + response.wind.speed);
     $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=" + APIKey,
+            url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=" + APIKey,
             method: "GET"
           }).then(function(response) {
             console.log(response);
@@ -41,7 +41,7 @@ $(document).ready(function() {
             }
     });
     $.ajax({  
-          url: "http://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=" + APIKey,
+          url: "https://api.openweathermap.org/data/2.5/forecast?q=" + input + "&appid=" + APIKey,
             method: "GET"
           }).then(function(response) {
             console.log(response);
